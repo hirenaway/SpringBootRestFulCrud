@@ -63,5 +63,4 @@ public class MemberController {
 		memberService.delete(id);
 	}
 
-
 }

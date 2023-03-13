@@ -17,7 +17,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	private MemberRepository memberRepository;
-	
+
 	@Override
 	public void delete(Long id) {
 		memberRepository.deleteById(id);
@@ -31,7 +31,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public Member get(Long id) {
 		Optional<Member> m = memberRepository.findById(id);
-		if(m.isPresent()) {
+		if (m.isPresent()) {
 			return m.get();
 		}
 		return null;
@@ -45,7 +45,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public Member updateMemberById(Long id, Member member) {
 		Optional<Member> m = memberRepository.findById(id);
-		if(m.isPresent()) {
+		if (m.isPresent()) {
 			Member presentMember = m.get();
 			presentMember.setMemberLocation(member.getMemberLocation());
 			presentMember.setMemberName(member.getMemberName());
